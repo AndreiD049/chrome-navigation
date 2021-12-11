@@ -28,6 +28,7 @@ module.exports = {
         { from: "./src/manifest.json" },
         { from: "./src/icons/icon16.png", to: "./icons" },
         { from: "./src/icons/icon32.png", to: "./icons" },
+        { from: "./src/icons/icon48.png", to: "./icons" },
         { from: "./src/icons/icon128.png", to: "./icons" },
       ],
     }),

@@ -1,5 +1,11 @@
-console.log("loading", location.href);
-const button = document.createElement("button");
-button.textContent = "locate element";
+import CommandInput from "./CommandInput";
+import GlobalController from "./Global/GlobalController";
 
-document.body.appendChild(button);
+const defaultCommand = ":";
+
+document.addEventListener("readystatechange", async () => {
+	const { command } = await chrome.storage.sync.get("command");
+	const commandPrompt = new CommandInput();
+	const listener = new GlobalController(command || defaultCommand, commandPrompt.render);
+	listener.init();
+});

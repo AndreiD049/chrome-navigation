@@ -1,3 +1,7 @@
 html, body {
 	width: 400px;
 }
+
+#savechangesbox {
+	padding: 5px;
+}
