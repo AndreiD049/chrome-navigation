@@ -1,11 +1,10 @@
-import CommandInput from "./CommandInput";
-import GlobalController from "./Global/GlobalController";
+import CommandInput from "./views/CommandView";
+import GlobalController from "./controllers/GlobalController";
 
 const defaultCommand = ":";
 
 document.addEventListener("readystatechange", async () => {
 	const { command } = await chrome.storage.sync.get("command");
-	const commandPrompt = new CommandInput();
-	const listener = new GlobalController(command || defaultCommand, commandPrompt.render);
-	listener.init();
+	const listener = new GlobalController(command || defaultCommand);
+	document.addEventListener("keypress", listener.handleKeyPress);
 });

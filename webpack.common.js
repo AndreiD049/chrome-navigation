@@ -11,8 +11,8 @@ module.exports = {
   },
   module: {
     rules: [
-			{ test: /\.tsx?$/, use: "ts-loader", exclude: /node_modules/ },
-			{ test: /\.css$/, use: ["style-loader", "css-loader"] }
+			{ test: /\.tsx?$/i, use: "ts-loader", exclude: /node_modules/ },
+			{ test: /\.css$/i, use: ["style-loader", "css-loader", "postcss-loader"] }
 		],
   },
   resolve: { extensions: [".tsx", ".ts", ".js"] },
